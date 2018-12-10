@@ -2,7 +2,7 @@
 
 ## Intro
 
-A shiny app that allows you to compare calculation speed of the Cox-Ross-Rubinstein (CRR) option pricing model in R, Java and C++.
+A shiny app that allows you to compare the calculation speed of the Cox-Ross-Rubinstein (CRR) option pricing model implemented in R, Java and C++.
 
 ## More about this app
 
