@@ -1,5 +1,20 @@
+library(shiny)
+library(fOptions)
+library(rJava)
+library(shinythemes)
+library(microbenchmark)
+library(data.table)
+library(plotly)
+library(Rcpp)
+
+.jinit()
+
+.jaddClassPath('java/CRR.jar')
+crr <-.jnew('CRR')
+
+
 cppFunction("double CRRcpp(const std::string& optionType , double undly_price, double strike, double time,
-                             double risk_free_rate, double dividend_yield, double std, int periods ) { 
+            double risk_free_rate, double dividend_yield, double std, int periods ) { 
             
             double typeFlag = -1;
             
@@ -42,22 +57,22 @@ cppFunction("double CRRcpp(const std::string& optionType , double undly_price, d
             
             } else if (optionType==\"ca\" || optionType==\"pa\"){
 
-      for (int j =periods-1;j>=0;j--){
-  
-        for (int i =0;i<=j;i++){
-        
+            for (int j =periods-1;j>=0;j--){
+            
+            for (int i =0;i<=j;i++){
+            
             bin_tree[i] = std::max(  typeFlag * (undly_price* pow (u,i) * pow (d,  abs(i-j)) - strike )  , 
-                                    (p * bin_tree[i+1] + (1-p) * bin_tree[i])*Df);
-
-          }
-        
-        }
-        
-        return bin_tree[0];
-
-   } else {
-      return -1;
-   }
-    
-  return -1;
-  }")
+            (p * bin_tree[i+1] + (1-p) * bin_tree[i])*Df);
+            
+            }
+            
+            }
+            
+            return bin_tree[0];
+            
+            } else {
+            return -1;
+            }
+            
+            return -1;
+            }")
