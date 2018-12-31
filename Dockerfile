@@ -17,5 +17,5 @@ RUN R -e "install.packages(c('httr','shiny','rJava','plotly','fOptions',\
 
 
 RUN cd srv/shiny-server/java \
-    chmod + x compile_archive_java.sh && \
+    chmod +x compile_archive_java.sh && \
     ./compile_archive_java.sh
