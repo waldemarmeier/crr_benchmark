@@ -15,6 +15,8 @@ In this R-shiny app you can compare the speed of the CRR-model calculation in R,
 ### Docker
 
 Run using docker:
-`docker build -t crr .
+
+```
+docker build -t crr .
 docker run -p 3838:3838 crr
-`
+```
