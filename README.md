@@ -20,7 +20,7 @@ Run using docker (clone repo and open a commandline window in the directory):
 docker build -t crr .
 docker run -p 3838:3838 crr
 ```
-Now, access the app in the browser on `localhost:3838`.
+Now, you can access the app in the browser on `localhost:3838`.
 
 ### R Studio
 
