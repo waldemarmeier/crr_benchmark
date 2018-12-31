@@ -14,9 +14,26 @@ In this R-shiny app you can compare the speed of the CRR-model calculation in R,
 
 ### Docker
 
-Run using docker:
+Run using docker (clone repo and open a commandline window in the directory):
 
 ```
 docker build -t crr .
 docker run -p 3838:3838 crr
 ```
+
+### R Studio
+
+This setup requires that you install the JDK and all R-packages (listed in app/global.R). Clone the repository and import it into r-studio. Open a commandline window and move to `app/java`. Now you have to compile and package the Java file.
+
+Using the script
+```
+chmod +x compile_archive_java.sh
+./ compile_archive_java.sh
+```
+Or the JDK commands
+
+```
+javac CRR.java
+jar CRR.jar CRR.class
+```
+Press the run button in R-Studio to start the app.
