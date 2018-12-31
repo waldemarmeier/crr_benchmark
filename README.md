@@ -35,6 +35,6 @@ Or the JDK commands
 
 ```
 javac CRR.java
-jar CRR.jar CRR.class
+jar cf CRR.jar CRR.class
 ```
 Press the run button in R-Studio to start the app.
