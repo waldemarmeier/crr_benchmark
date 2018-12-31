@@ -24,7 +24,7 @@ Now, you can access the app in the browser on `localhost:3838`.
 
 ### R Studio
 
-This setup requires that you install the JDK and all R-packages (listed in app/global.R). Clone the repository and import it into r-studio. Open a commandline window and move to `app/java`. Now you have to compile and package the Java file.
+This setup requires that you to install the JDK and all R-packages (listed in app/global.R). Clone the repository and import it into r-studio. Open a commandline window and move to `app/java`. Now you have to compile and package the Java file.
 
 Using the script
 ```
